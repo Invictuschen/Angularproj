@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col-xs-3">
+    <!--<input type="text" class="form-control" [(ngModel)]="Username" (input)="changeShow()">{{ Username }}<br>-->
+    <!--<button class="btn btn-info" [disabled]="Buttonshow"-->
+    <!--(click)="emptyShow()">Change</button>  有更简便的写法，直接把判断写在button里而不用加入函数-->
+    <input type="text" class="form-control" [(ngModel)]="Username">{{ Username }}<br>
+    <button class="btn btn-success" [disabled]="Username === ''" (click)="Username=''">Reset Username</button>
+  </div>
+
+</div>

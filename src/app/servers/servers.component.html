@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>I am in the AppComponent</h3>
+      <hr>
+
+      <label> Server Status</label><br>
+      {{ ServerName }}<!--此时这处的并不是2way databinding  而是input触发了update的函数来对其进行改变-->
+      <!--<input type="text"  [value]="ServerName" class="form-control" (input)="updateServer($event)">&lt;!&ndash;这段input中也能看出，input的value并没有随着servername的改变而改变&ndash;&gt;-->
+      <input type="text" [(ngModel)]="ServerName" class="form-control">
+
+      <!--<span class="alert alert-success" *ngIf="ServerCreate === true; else icant">Yes, I can</span>-->
+      <!--<ng-template #icant><span class="alert alert-danger">Noooo, I can't</span></ng-template>-->
+      <!--<button class="btn btn-danger">Waht the huak</button>-->
+
+      <!--<br>-->
+      <button class="btn btn-primary" [disabled]="Allowserver"
+              (click)="onCreateServer()">Add server</button>
+      <!--{{ ServerCreationStatus }}-->
+      <p *ngIf="ServerCreate">Server is created, server name is {{ ServerName }} </p>
+      <app-server *ngFor="let x of servers"></app-server>
+    </div>
+  </div>
+</div>

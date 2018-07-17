@@ -1,0 +1,3 @@
+<button class="btn btn-success" (click)="onDisplay()">Display details</button>
+<p *ngIf="pShow">Password = nima</p>
+<p [ngStyle]="{backgroundColor:getBlue()}" *ngFor="let x of logtime" [ngClass]="{online:i>=5}">{{ x }}</p>
